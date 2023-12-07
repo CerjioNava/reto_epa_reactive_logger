@@ -8,7 +8,7 @@ import java.util.Date;
 public class RabbitErrorDTO {
 
     private String id;
-    private String statusCode;
+    private Integer statusCode;
     private String error;
     private Date date;
 

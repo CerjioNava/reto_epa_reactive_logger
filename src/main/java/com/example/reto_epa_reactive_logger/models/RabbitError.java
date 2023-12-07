@@ -12,7 +12,7 @@ public class RabbitError {
 
     @Id
     private String id;
-    private String statusCode;
+    private Integer statusCode;
     private String error;
     private Date date;
 
