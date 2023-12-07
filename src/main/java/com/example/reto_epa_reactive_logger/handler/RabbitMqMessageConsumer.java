@@ -1,4 +1,4 @@
-package com.example.reto_epa_reactive_logger;
+package com.example.reto_epa_reactive_logger.handler;
 
 import com.example.reto_epa_reactive_logger.config.RabbitMQConfig;
 import com.example.reto_epa_reactive_logger.mapper.RabbitErrorMapper;

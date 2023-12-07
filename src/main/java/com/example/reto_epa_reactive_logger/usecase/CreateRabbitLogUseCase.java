@@ -21,7 +21,7 @@ public class CreateRabbitLogUseCase implements Consumer<RabbitLogDTO> {
 
     @Override
     public void accept(RabbitLogDTO dto) {
-        System.out.println("INFO: " + dto);
-        iRabbitLogRepository.save(rabbitLogMapper.fromDTOtoRabbitLogEntity().apply(dto));
+        System.out.println("INFO: "+dto.getDate()+" | "+dto.getMessage());
+        iRabbitLogRepository.save(rabbitLogMapper.fromDTOtoRabbitLogEntity().apply(dto)).subscribe();
     }
 }
