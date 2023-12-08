@@ -33,7 +33,7 @@ public class RabbitMqMessageConsumer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        receiver.consumeAutoAck(RabbitMQConfig.QUEUE_NAME_ERROR)
+        receiver.consumeAutoAck(System.getenv("QUEUE_NAME_ERROR"))
                 .map(message -> {
                     RabbitErrorDTO dto = gson
                             .fromJson(new String(message.getBody()),
@@ -45,7 +45,7 @@ public class RabbitMqMessageConsumer implements CommandLineRunner {
                     return dto;
                 }).subscribe();
 
-        receiver.consumeAutoAck(RabbitMQConfig.QUEUE_CLOUDWATCH)
+        receiver.consumeAutoAck(System.getenv("QUEUE_CLOUDWATCH"))
                 .map(message -> {
                     RabbitLogDTO dto = gson
                             .fromJson(new String(message.getBody()),
