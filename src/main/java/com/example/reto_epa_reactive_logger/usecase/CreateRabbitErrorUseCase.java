@@ -21,7 +21,7 @@ public class CreateRabbitErrorUseCase implements Consumer<RabbitErrorDTO> {
 
     @Override
     public void accept(RabbitErrorDTO dto) {
-        System.out.println("FAILED: "+dto.getDate()+" | "+dto.getStatusCode()+" | "+dto.getError());
+        System.out.println("FAILED: "+dto.getDate()+" | statusCode: "+dto.getStatusCode()+" | message: "+dto.getError());
         iRabbitErrorRepository.save(rabbitErrorMapper.fromDTOtoRabbitErrorEntity().apply(dto)).subscribe();
     }
 }
